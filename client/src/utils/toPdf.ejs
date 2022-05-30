@@ -1,0 +1,22 @@
+<script>
+    const createPDF = async () => {
+            const pdf = new jsPDF("portrait", "pt", "a4");
+            const data = await document.querySelector("#imprimir");
+            pdf.html(data).then(() => {
+              pdf.save("Escrito.pdf");
+            });
+          };
+</script>
+
+<!--
+    $(document).on('click', '#toPdf', function(){ toPdf();});
+
+
+    IMPORTANTE  el npm añadido en la guia para que funcione
+    
+esto ponerlo en la vista 
+    <a href="javascript:pruebaDivAPdf()" class="button">Pasar a PDF</a>
+
+ y el campo que sea para imprimir meterle el id = imprimir
+
+-->
